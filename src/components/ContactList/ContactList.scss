@@ -1,0 +1,73 @@
+.app__contacts {
+  // border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-width: 400px;
+  height: 100%;
+  background-color: var(--ligthWhite-color);
+
+  .contacts__header {
+    // border: 1px solid green;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    flex-direction: row;
+    padding: 10px;
+    background-color: var(--white-color);
+
+    img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+    }
+
+    .header__menu {
+      // border: 1px solid blue;
+      display: flex;
+
+      .menu__icon {
+        color: var(--gray-color);
+        width: 22px;
+        height: 22px;
+        margin: 0 12px;
+      }
+    }
+  }
+
+  .contacts__search {
+    // border: 1px solid blue;
+    border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+    background  : white;
+    padding: 10px;
+
+    .search__container {
+      width: 100%;
+      background-color: var(--white-color);
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      border-radius: 10px;
+      padding: 5px 10px;
+
+      .search-icon {
+        color: var(--gray-color);
+        width: 28px;
+        height: 28px;
+      }
+
+      input {
+        background-color: var(--white-color);
+        font-family: var(--font-base);
+        margin-left: 15px;
+        border: none;
+        outline: none;
+        padding: 5px;
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
