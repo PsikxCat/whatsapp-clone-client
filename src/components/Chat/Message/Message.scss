@@ -3,29 +3,30 @@
   display: flex;
   margin: 5px 15px;
 
+  &.sent-by-me {
+    justify-content: flex-end;
+  }
+
+  &.sent-by-other {
+    justify-content: flex-start;
+  }
+
   .chat__message {
     // border: 1px solid green;
     max-width: 50%;
     color: #303030;
     padding: 8px 10px;
     font-size: 1.2rem;
+
+    &.sent-by-me {
+      background-color: #daf8cd;
+      border-radius: 10px 10px 0 10px;
+    }
+
+    &.sent-by-other {
+      background-color: var(--primary-color);
+      border-radius: 10px 10px 10px 0;
+    }
   }
 
-  .chat__message.sent-by-me {
-    background-color: #daf8cd;
-    border-radius: 10px 10px 0 10px;
-  }
-
-  .chat__message.sent-by-other {
-    background-color: #f1f0f0;
-    border-radius: 10px 10px 10px 0;
-  }
-}
-
-.chat__div.sent-by-me {
-  justify-content: flex-end;
-}
-
-.chat__div.sent-by-other {
-  justify-content: flex-start;
 }

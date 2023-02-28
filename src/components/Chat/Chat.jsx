@@ -1,5 +1,6 @@
 import React from 'react';
 import { MdTagFaces, MdMic, MdAttachFile } from 'react-icons/md';
+import { messagesList } from '../../mockData';
 
 import Message from './Message/Message';
 import './Chat.scss';
@@ -21,14 +22,15 @@ function Chat() {
       </div>
 
       <div className='chat__body'>
-        <Message
-          isSentByMe={true}
-          message='Hola, ¿cómo estás?'
-        />
-        <Message
-          isSentByMe={false}
-          message='Bien, ¿y tú?'
-        />
+        {
+          messagesList.map((message) => (
+            <Message
+              key={message.id}
+              isSentByMe={message.senderID === 0}
+              message={message.text}
+            />
+          ))
+        }
       </div>
 
       <div className='chat__footer'>

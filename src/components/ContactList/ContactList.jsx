@@ -2,6 +2,7 @@ import React from 'react';
 import { MdOutlineSearch, MdPeople, MdDonutLarge, MdMessage, MdMoreVert } from 'react-icons/md';
 
 import './ContactList.scss';
+import { contactList } from '../../mockData';
 import Contact from './Contact/Contact';
 
 function ContactList() {
@@ -25,16 +26,17 @@ function ContactList() {
         </div>
       </div>
 
-      <Contact
-        avatar='https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/e3/e31c0e2a14bf0fcd8a423dca3f4014327c5888e3_full.jpg'
-        name='John Doe'
-        message='Message Lorem ipsum dolor.'
-      />
-      <Contact
-        avatar='https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/00/00ae680e42c34a91c88bd4594c1c4149111c6293_full.jpg'
-        name='Heisenberg'
-        message='Message Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet.'
-      />
+      {
+        contactList.map((contact) => (
+          <Contact
+            key={contact.id}
+            avatar={contact.avatar}
+            name={contact.name}
+            message={contact.lastText}
+            time={contact.lastTime}
+          />
+        ))
+      }
     </section>
   );
 }

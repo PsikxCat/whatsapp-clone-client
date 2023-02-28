@@ -1,31 +1,31 @@
 export const contactList = [
   {
     id: 1,
-    name: 'Ayush Kulshrestha',
-    profilePic: '/whatsapp-clone/profile/ayushk.jpeg',
+    name: 'Jax Teller',
+    avatar: 'https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/a2/a2cd82c0413dea6e98b71aa7fde4f631cc894edb_full.jpg',
     lastText: 'Hey Man',
-    lastTextTime: '12:58 PM',
+    lastTime: '12:58 PM',
   },
   {
     id: 2,
-    name: 'John Appleseed',
-    profilePic: '/whatsapp-clone/profile/theindiandev.jpeg',
-    lastText: 'I\'m with @theindiandev',
-    lastTextTime: '12:45 PM',
+    name: 'Bobby Axelrod',
+    avatar: 'https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/08/08906fc9db72eeec88b818f63ee0509211f25d5c_full.jpg',
+    lastText: 'I\'m with @psikocat',
+    lastTime: '12:45 PM',
   },
   {
     id: 3,
-    name: 'Elon Bezoz',
-    profilePic: '/whatsapp-clone/profile/elon.jpeg',
+    name: 'Elon Musk',
+    avatar: 'https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/e3/e37a175ab5518ee06ea1cddfe803b673227aae96_full.jpg',
     lastText: 'Where is my Tesla?',
-    lastTextTime: '12:30 PM',
+    lastTime: '12:30 PM',
   },
   {
     id: 4,
-    name: 'Jeff Musk',
-    profilePic: '/whatsapp-clone/profile/jeff.jpeg',
+    name: 'Jeff Bezos',
+    avatar: 'https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/00/000a9520a033f4d352db29aa5e8e3a54001a9df6_full.jpg',
     lastText: 'Travelling to space',
-    lastTextTime: '12:00 PM',
+    lastTime: '12:00 PM',
   },
 ];
 export const messagesList = [
@@ -65,7 +65,7 @@ export const messagesList = [
     addedOn: '12:00 PM',
   },
   {
-    id: 5,
+    id: 6,
     messageType: 'TEXT',
     text: 'Have you subscribed The Indian Dev?',
     senderID: 1,
