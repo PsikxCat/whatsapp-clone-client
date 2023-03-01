@@ -1,12 +1,37 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { PropTypes } from 'prop-types';
 import { MdTagFaces, MdMic, MdAttachFile } from 'react-icons/md';
-import { messagesList } from '../../mockData';
+import EmojiPicker from 'emoji-picker-react';
 
+import { messagesList } from '../../mockData';
 import Message from './Message/Message';
 import './Chat.scss';
 
 function Chat({ selectedChat }) {
+  const [isPickerVisible, setIsPickerVisible] = useState(false);
+  const [text, setText] = useState('');
+  const [messageList, setMessageList] = useState(messagesList);
+
+  const onEmojiClick = (event) => {
+    setText(text + event.emoji);
+    setIsPickerVisible(false);
+  };
+
+  const onKeyDown = (event) => {
+    if (event.key === 'Enter') {
+      const newMessage = {
+        id: messageList.length + 1,
+        messageType: 'TEXT',
+        text,
+        senderID: 0,
+        addedOn: '12:12',
+      };
+
+      setMessageList([...messageList, newMessage]);
+      setText('');
+    }
+  };
+
   return (
     <section className='app__chat'>
       <div className='chat__header'>
@@ -24,7 +49,7 @@ function Chat({ selectedChat }) {
 
       <div className='chat__body'>
         {
-          messagesList.map((message) => (
+          messageList.map((message) => (
             <Message
               key={message.id}
               isSentByMe={message.senderID === 0}
@@ -35,11 +60,27 @@ function Chat({ selectedChat }) {
       </div>
 
       <div className='chat__footer'>
-        <MdTagFaces className='container__icon' />
+        {
+          isPickerVisible && (
+            <EmojiPicker
+              onEmojiClick={onEmojiClick}
+              emojiStyle='google'
+            />
+          )
+        }
+
+        <MdTagFaces
+          onClick={() => setIsPickerVisible(!isPickerVisible)}
+          className='container__icon'
+        />
         <MdAttachFile className='container__icon' />
 
         <div className='footer__container'>
-          <input type="text" placeholder='Escribe un mensaje aquí' />
+          <input
+            onChange={(event) => setText(event.target.value)}
+            onKeyDown={onKeyDown}
+            value={text}
+            type="text" placeholder='Escribe un mensaje aquí' />
         </div>
 
         <MdMic className='container__icon' />

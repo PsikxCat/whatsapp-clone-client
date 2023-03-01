@@ -57,6 +57,14 @@
     border-bottom: 1px solid rgba(128, 128, 128, 0.2);
     background-color: var(--white-color);
     padding: 0 12px 0 20px;
+    position: relative;
+
+    .EmojiPickerReact {
+      position: absolute;
+      bottom: 63px;
+      z-index: 999;
+      font-size: 80px;
+    }
 
     .container__icon {
       cursor: pointer;
@@ -77,16 +85,14 @@
       padding: 0 10px;
       margin-right: 12px;
 
-
       input {
+        width: 100%;
         font-family: var(--font-base);
-        // margin-left: 15px;
         border: none;
         outline: none;
         padding: 5px;
         font-size: 1.5rem;
       }
-
     }
   }
 }

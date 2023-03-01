@@ -5,7 +5,6 @@ import './App.scss';
 
 function App() {
   const [selectedChat, setSelectedChat] = useState();
-  console.log(selectedChat);
 
   return (
     <section className="app">
