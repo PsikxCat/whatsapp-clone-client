@@ -14,12 +14,12 @@
   .chat__message {
     // border: 1px solid green;
     max-width: 50%;
-    color: #303030;
+    color: var(--darkGray-color);
     padding: 8px 10px;
     font-size: 1.2rem;
 
     &.sent-by-me {
-      background-color: #daf8cd;
+      background-color: var(--lightGreen-color);
       border-radius: 10px 10px 0 10px;
     }
 

@@ -8,9 +8,9 @@ function Message({ isSentByMe, message }) {
   <div className={'chat__div ' + (isSentByMe ? 'sent-by-me' : 'sent-by-other')}>
     <p className={'chat__message ' + (isSentByMe ? 'sent-by-me' : 'sent-by-other')}>
       { message }
-      <span className='message__timestamp'>
+      {/* <span className='message__timestamp'>
         {new Date().toUTCString()}
-      </span>
+      </span> */}
     </p>
   </div>
   );

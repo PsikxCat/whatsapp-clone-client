@@ -1,0 +1,25 @@
+.emptychat__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 3;
+  background-color: var(--white-color);
+  height: 100%;
+  padding: 20px;
+  font-size: 2.2rem;
+  color: var(--gray-color);
+  text-align: center;
+  gap: 10px;
+
+
+  .emptychat__img {
+    width: 420px;
+  }
+
+  span {
+    font-size: 3rem;
+    color: #000000bd;
+    margin-top: 10px;
+  }
+}

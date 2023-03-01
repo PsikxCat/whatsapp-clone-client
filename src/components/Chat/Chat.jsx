@@ -1,22 +1,23 @@
 import React from 'react';
+import { PropTypes } from 'prop-types';
 import { MdTagFaces, MdMic, MdAttachFile } from 'react-icons/md';
 import { messagesList } from '../../mockData';
 
 import Message from './Message/Message';
 import './Chat.scss';
 
-function Chat() {
+function Chat({ selectedChat }) {
   return (
     <section className='app__chat'>
       <div className='chat__header'>
-        <img src="https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/00/00ae680e42c34a91c88bd4594c1c4149111c6293_full.jpg" alt="profile picture" />
+        <img src={selectedChat.avatar} alt="profile picture" />
 
         <div className="header__info">
           <h3 className='info__name'>
-            Heisenberg
+            {selectedChat.name}
           </h3>
           <p className='info__status'>
-            Online
+            {selectedChat.status}
           </p>
         </div>
       </div>
@@ -46,5 +47,15 @@ function Chat() {
     </section>
   );
 }
+
+Chat.propTypes = {
+  selectedChat: PropTypes.shape({
+    avatar: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    lastText: PropTypes.string.isRequired,
+    lastTime: PropTypes.string.isRequired,
+    status: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
 export default Chat;

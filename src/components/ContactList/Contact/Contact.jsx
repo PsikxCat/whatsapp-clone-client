@@ -3,34 +3,37 @@ import { PropTypes } from 'prop-types';
 
 import './Contact.scss';
 
-function Contact({ avatar, name, message, time }) {
+function Contact({ contact, setChat }) {
   return (
-    <div className='contact'>
+    <div className='contact' onClick={() => setChat(contact)}>
       <div className="contact__avatar">
-        <img src={avatar} alt="profile avatar" />
+        <img src={contact.avatar} alt="profile avatar" />
       </div>
 
       <div className="contact__info">
         <h3 className='contact__info-name'>
-          {name}
+          {contact.name}
         </h3>
         <p className='contact__info-message'>
-          {message}
+          {contact.lastText}
         </p>
       </div>
 
       <span className='contact__time'>
-        {time}
+        {contact.lastTime}
       </span>
     </div>
   );
 }
 
 Contact.propTypes = {
-  avatar: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  message: PropTypes.string.isRequired,
-  time: PropTypes.string.isRequired,
+  contact: PropTypes.shape({
+    avatar: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    lastText: PropTypes.string.isRequired,
+    lastTime: PropTypes.string.isRequired,
+  }).isRequired,
+  setChat: PropTypes.func.isRequired,
 };
 
 export default Contact;

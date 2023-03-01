@@ -11,6 +11,10 @@
   background-color: white;
   cursor: pointer;
 
+  &:hover {
+    background-color: #f2f2f2;
+  }
+
   .contact__avatar img {
     width: 49px;
     height: 49px;
@@ -45,7 +49,7 @@
   }
 
   .contact__time {
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: var(--gray-color);
   }
 }

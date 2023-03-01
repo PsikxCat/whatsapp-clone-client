@@ -1,15 +1,16 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { MdOutlineSearch, MdPeople, MdDonutLarge, MdMessage, MdMoreVert } from 'react-icons/md';
 
 import './ContactList.scss';
 import { contactList } from '../../mockData';
 import Contact from './Contact/Contact';
 
-function ContactList() {
+function ContactList({ setChat }) {
   return (
     <section className='app__contacts'>
       <div className='contacts__header'>
-        <img src="https://cdn.cloudflare.steamstatic.com/steamcommunity/public/images/avatars/b2/b236995b8fc6f2dcd262216a11a9765056be29b1_full.jpg" alt="profile picture" />
+        <img src={'/images/psikocat_logo.svg'} alt="profile picture" />
 
         <div className="header__menu">
           <MdPeople className='menu__icon'/>
@@ -29,16 +30,18 @@ function ContactList() {
       {
         contactList.map((contact) => (
           <Contact
+            contact={contact}
             key={contact.id}
-            avatar={contact.avatar}
-            name={contact.name}
-            message={contact.lastText}
-            time={contact.lastTime}
+            setChat={setChat}
           />
         ))
       }
     </section>
   );
 }
+
+ContactList.propTypes = {
+  setChat: PropTypes.func.isRequired,
+};
 
 export default ContactList;
